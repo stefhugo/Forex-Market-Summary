@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWFX Widget</title>
+</head>
+<body>
+    <script type="text/javascript">
+        DukascopyApplet = {
+            "type": "swfx_widget",
+            "params": {
+                "showHeader": true,
+                "showAbout": true,
+                "tableBorderColor": "#D92626",
+                "availableInstruments": "l:EUR/USD,USD/JPY,AUD/USD,USD/CHF",
+                "showFee": false,
+                "includeCommission": false,
+                "live": true,
+                "width": "100%",
+                "height": "800px", <!-- Adjusted height -->
+                "adv": "popup",
+                "lang": "en"
+            }
+        };
+    </script>
+    <script type="text/javascript" src="https://freeserv-static.dukascopy.com/2.0/core.js"></script>
+</body>
+</html>
