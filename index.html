@@ -1,29 +1,88 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SWFX Widget</title>
-</head>
-<body>
-    <script type="text/javascript">
-        DukascopyApplet = {
-            "type": "swfx_widget",
-            "params": {
-                "showHeader": true,
-                "showAbout": true,
-                "tableBorderColor": "#D92626",
-                "availableInstruments": "l:EUR/USD,USD/JPY,AUD/USD,USD/CHF",
-                "showFee": false,
-                "includeCommission": false,
-                "live": true,
-                "width": "100%",
-                "height": "800px", <!-- Adjusted height -->
-                "adv": "popup",
-                "lang": "en"
-            }
-        };
-    </script>
-    <script type="text/javascript" src="https://freeserv-static.dukascopy.com/2.0/core.js"></script>
-</body>
-</html>
+<title>SWFX Widget</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="https://freeserv-static.dukascopy.com/2.0/v/0.42.76/swfx/swfx.css" />
+<script nonce="a2b1cab8af6b3349a5573563">
+	window.dc = window.dc || {};
+	window.dc.i18n = window.dc.i18n || {};
+	window.dc.i18n.NS = 'swfx';
+</script>
+<script nonce="a2b1cab8af6b3349a5573563" src="https://freeserv.dukascopy.com/2.0/index.php?path=common/translation&lang=en"></script>
+<script nonce="a2b1cab8af6b3349a5573563" src="https://freeserv-static.dukascopy.com/2.0/v/0.42.76/swfx/swfx.js"></script>
+<script nonce="a2b1cab8af6b3349a5573563">
+window.onload = function() {
+	var widget = new dc.swfx.SwfxWidget({
+		instrumentUri: 'https://freeserv.dukascopy.com/2.0/index.php?path=common/instruments',
+		chartUri: 'https://freeserv.dukascopy.com/2.0/index.php?path=chart/popup',
+		quotesUri: 'https://freeserv.dukascopy.com/2.0/index.php?path=swfx_widget/getQuotes',
+		dhlUri: 'https://freeserv.dukascopy.com/2.0/index.php?path=daily_highs_lows/data',
+		commissionsUri: 'https://freeserv.dukascopy.com/2.0/index.php?path=common/commissions',
+		spreadsUri: 'https://freeserv.dukascopy.com/2.0/index.php?path=swfx_widget/getSpreads',
+		tickUri: 'https://freeserv.dukascopy.com/2.0/index.php?path=quotes/getLastTicksById',
+		staticUri: 'https://freeserv-static.dukascopy.com/2.0/v/0.42.76/swfx',
+		sentimentsDataUri: 'https://freeserv.dukascopy.com/2.0/index.php?path=realtime_sentiment_index/data',
+		volumesUri: 'https://freeserv.dukascopy.com/2.0/index.php?path=quotes/monthlyVolumes',
+		distSpreadUri: 'https://freeserv.dukascopy.com/2.0/index.php?path=average_spreads/getDistSpreadsNCA',
+		disclaimerUri: 'https://freeserv.dukascopy.com/2.0/index.php?path=common/disclaimer',
+		header: true
+	});
+	widget.getSettings().parseQueryString(window.location.search.replace(/\?/, ''));
+	widget.render();
+};
+</script>
+<!-- Google Tag Manager -->
+<script nonce="a2b1cab8af6b3349a5573563">
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.nonce='a2b1cab8af6b3349a5573563';j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N5PT8M7');
+
+window.addEventListener('load', function() {
+	var container = document.createDocumentFragment(),
+		bodyElement = document.body,
+		noscriptElm = document.createElement('noscript'),
+		iframeElm = document.createElement('iframe');
+	
+	noscriptElm.appendChild(iframeElm);
+	
+	container.appendChild(document.createComment('Google Tag Manager (noscript)'));
+	container.appendChild(noscriptElm);
+	container.appendChild(document.createComment('End Google Tag Manager (noscript)'));
+	
+	bodyElement.insertBefore(container, bodyElement.firstChild);
+	
+	iframeElm.src = 'https://www.googletagmanager.com/ns.html?id=GTM-N5PT8M7';
+	iframeElm.height = 0;
+	iframeElm.width = 0;
+	iframeElm.style = 'display:none;visibility:hidden';
+});
+
+</script>
+<!-- End Google Tag Manager --><!--LiveInternet counter--><script nonce="a2b1cab8af6b3349a5573563" type="text/javascript"><!--
+    var img = new Image(),
+        url = "//counter.yadro.ru/hit?t26.6;r"+
+            escape(document.referrer)+
+            ((typeof(screen)=="undefined")?"":
+            ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+            screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+            ";"+Math.random(),
+        container = document.createElement('a');
+
+    container.href = '//www.liveinternet.ru/click';
+    container.target = '_blank';
+
+    img.onload = function () {
+        document.body.appendChild(container);
+        container.appendChild(img);
+    };
+
+    window.addEventListener('load', function() {
+        img.src = url;
+        img.style.display = 'none';
+        img.border = '0';
+        img.width = '1';
+        img.height = '1';
+    });
+//--></script><!--/LiveInternet-->
